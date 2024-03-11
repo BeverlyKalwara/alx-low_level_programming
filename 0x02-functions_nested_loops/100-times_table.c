@@ -27,16 +27,21 @@ void print_times_table(int n)
 					_putchar(' ');
 				if (p <= 9)
 					_putchar(' ');
-				if (p >= 100)
+				if (p <= 9)
 				{
-					_putchar((p / 100) + '0');
-					_putchar((p / 10) % 10 + '0');
+					_putchar((p % 10) + '0');
 				}
 				else if (p >= 10 && p <= 99)
 				{
 					_putchar((p / 10) + '0');
+					_putchar((p % 10) + '0');
 				}
-				_putchar((p % 10) + '0');
+				else
+				{
+					_putchar((p / 10) + '0');
+					_putchar((p / 10) % 10 + '0');
+					_putchar((p % 10) + '0');
+				}
 			}
 			_putchar('\n');
 		}
